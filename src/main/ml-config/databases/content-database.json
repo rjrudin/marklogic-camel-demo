@@ -1,0 +1,14 @@
+{
+  "database-name" : "%%DATABASE%%",
+  "triggers-database": "%%TRIGGERS_DATABASE%%",
+  "word-lexicon": ["http://marklogic.com/collation/"], 
+  "collection-lexicon": true,
+  "range-element-index" : [ {
+    "scalar-type" : "string",
+    "namespace-uri" : "CHANGEME",
+    "localname" : "CHANGEME",
+    "collation" : "http://marklogic.com/collation/",
+    "range-value-positions" : false,
+    "invalid-values" : "reject"
+  } ]
+}
