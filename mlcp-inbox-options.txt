@@ -1,0 +1,4 @@
+-output_collections
+mlcp-test
+-output_uri_replace
+"(.)+inbox,''"

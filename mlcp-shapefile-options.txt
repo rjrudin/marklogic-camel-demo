@@ -1,0 +1,4 @@
+-output_collections
+shapefiles
+-output_uri_replace
+"(.)+inbox,''"
