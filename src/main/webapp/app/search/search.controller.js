@@ -55,7 +55,8 @@
     };
 
     ctrl.mapOptions = {
-      center: [-97.846, 38.591],
+      //center: [-97.846, 38.591],
+      center: [36, 36],
       zoom: 4,
       baseMap: 'national-geographic'
     };

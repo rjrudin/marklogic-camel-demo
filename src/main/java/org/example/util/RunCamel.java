@@ -37,7 +37,7 @@ public class RunCamel {
                 .setHeader(Exchange.CONTENT_TYPE, constant("multipart/form-data; boundary=\"gc0p4Jq0M2Yt08jU534c0p\""))
                 .log("Sending shapefile to Ogre")
                 .to("http4://ogre.adc4gis.com/convert")
-                .setHeader(Exchange.HTTP_QUERY, constant("extension=json&collection=geo-json"))
+                .setHeader(Exchange.HTTP_QUERY, constant("extension=json&collection=geo-json&transform=geo-json"))
                 .setHeader(Exchange.HTTP_METHOD, constant("POST"))
                 .setHeader(Exchange.CONTENT_TYPE, constant("application/json"))
                 .log("Ingesting GeoJSON via MarkLogic REST API")
@@ -45,7 +45,7 @@ public class RunCamel {
                 .log("Finished processing shapefile");
 
             from("timer:foo?repeatCount=1")
-                .autoStartup(true)
+                .autoStartup(false)
                 .to("http4://data.gdeltproject.org/gdeltv2/lastupdate.txt")
                 .log("Received last update content")
                 .split(bodyAs(String.class).tokenize("\n"))

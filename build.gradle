@@ -16,7 +16,7 @@ buildscript {
 plugins {
 	id "java"
 	id "eclipse"
-  id "com.marklogic.ml-gradle" version "2.0"
+  id "com.marklogic.ml-gradle" version "2.2.0-RC1"
 }
 
 apply plugin: 'spring-boot'
@@ -49,7 +49,7 @@ dependencies {
   compile "com.marklogic:marklogic-spring-web:0.1.2"
 
   // Needed for loading modules into MarkLogic
-  compile "com.marklogic:ml-javaclient-util:2.7.1"
+  compile "com.marklogic:ml-javaclient-util:2.9.0-RC1"
 
   // Needed for Camel
   compile "org.apache.camel:camel-spring:2.17.0"
