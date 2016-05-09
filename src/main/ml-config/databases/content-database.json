@@ -7,38 +7,6 @@
     {
       "scalar-type" : "string",
       "namespace-uri" : "",
-      "localname" : "film_id",
-      "collation" : "http://marklogic.com/collation/",
-      "range-value-positions" : false,
-      "invalid-values" : "reject"
-    },
-    {
-      "scalar-type" : "string",
-      "namespace-uri" : "",
-      "localname" : "title",
-      "collation" : "http://marklogic.com/collation/",
-      "range-value-positions" : false,
-      "invalid-values" : "reject"
-    },
-    {
-      "scalar-type" : "string",
-      "namespace-uri" : "",
-      "localname" : "rating",
-      "collation" : "http://marklogic.com/collation/",
-      "range-value-positions" : false,
-      "invalid-values" : "reject"
-    },
-    {
-      "scalar-type" : "string",
-      "namespace-uri" : "",
-      "localname" : "category",
-      "collation" : "http://marklogic.com/collation/",
-      "range-value-positions" : false,
-      "invalid-values" : "reject"
-    },
-    {
-      "scalar-type" : "string",
-      "namespace-uri" : "",
       "localname" : "Actor1Geo_Fullname",
       "collation" : "http://marklogic.com/collation/",
       "range-value-positions" : false,
@@ -48,14 +16,6 @@
       "scalar-type" : "string",
       "namespace-uri" : "",
       "localname" : "Actor2Geo_Fullname",
-      "collation" : "http://marklogic.com/collation/",
-      "range-value-positions" : false,
-      "invalid-values" : "reject"
-    },
-    {
-      "scalar-type" : "string",
-      "namespace-uri" : "",
-      "localname" : "length",
       "collation" : "http://marklogic.com/collation/",
       "range-value-positions" : false,
       "invalid-values" : "reject"

@@ -44,8 +44,8 @@ public class RunCamel {
                 .to("http4://localhost:8500/v1/documents")
                 .log("Finished processing shapefile");
 
-            from("timer:foo?repeatCount=1")
-                .autoStartup(false)
+            from("timer:gdelt?repeatCount=1")
+                .autoStartup(true)
                 .to("http4://data.gdeltproject.org/gdeltv2/lastupdate.txt")
                 .log("Received last update content")
                 .split(bodyAs(String.class).tokenize("\n"))
@@ -60,16 +60,23 @@ public class RunCamel {
                 .setHeader(Exchange.HTTP_METHOD, constant(org.apache.camel.component.http4.HttpMethods.GET))
                 .to("http4://will-be-replaced")
                 .removeHeader(Exchange.HTTP_URI)
+                .log("Processing ${header.GdeltDataset}")
                 .unmarshal()
                 .zipFile()
+                .to("direct:processGdelt");
+
+            from("file://inbox/gdelt")
+                .to("direct:processGdelt");
+
+            from("direct:processGdelt")
                 .split(bodyAs(String.class).tokenize("\n"))
                 .setHeader(Exchange.HTTP_METHOD, constant(org.apache.camel.component.http4.HttpMethods.POST))
                 .setHeader(Exchange.HTTP_QUERY, simple("extension=xml&collection=gdelt&transform=gdelt&trans:dataset=${header.GdeltDataset}"))
                 .setHeader(Exchange.CONTENT_TYPE, constant("text/plain"))
                 .to("http4://localhost:8500/v1/documents?authUsername=admin&authPassword=admin")
+                .log("Done")
                 .end()
-                .log("All done")
-            ;
+                .log("All done");
         }
     }
 }
