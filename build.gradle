@@ -75,13 +75,7 @@ springBoot {
 }
 
 task camelRun(type: JavaExec) {
-  main = 'org.apache.camel.spring.Main'
+  main = 'org.example.util.RunCamel'
   classpath = sourceSets.main.runtimeClasspath
-  systemProperties = [
-    "mlHost": mlHost,
-    "mlRestPort": mlRestPort,
-    "mlUsername": mlUsername,
-    "mlPassword": mlPassword
-  ]
 }
 

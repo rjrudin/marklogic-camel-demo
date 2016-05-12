@@ -45,7 +45,7 @@ public class RunCamel {
                 .log("Finished processing shapefile");
 
             from("timer:gdelt?repeatCount=1")
-                .autoStartup(true)
+                .autoStartup(false)
                 .to("http4://data.gdeltproject.org/gdeltv2/lastupdate.txt")
                 .log("Received last update content")
                 .split(bodyAs(String.class).tokenize("\n"))
