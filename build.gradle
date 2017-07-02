@@ -17,6 +17,7 @@ plugins {
 	id "java"
 	id "eclipse"
   id "com.marklogic.ml-gradle" version "2.2.0-RC1"
+  id "com.github.jk1.dependency-license-report" version "0.3.11"
 }
 
 apply plugin: 'spring-boot'

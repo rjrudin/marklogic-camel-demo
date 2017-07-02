@@ -17,3 +17,5 @@ src/main/resources/templates
 src/main/resources/bower_components
 .idea
 inbox
+*.iml
+
